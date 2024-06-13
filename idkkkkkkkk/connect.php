@@ -1,10 +1,14 @@
 <?php
 
-echo '<h1>poziadavka 01</h1>';
+$servername = "localhost";
+$username = "userdb";
+$password = "databaza";
+$dbname = "northwindmysql";
 
+$connection = new mysqli($servername, $username, $password, $dbname);
 
-SELECT * FROM Customers;
-SELECT * FROM Orders;
-SELECT * FROM Suppliers;
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
 
 ?>
